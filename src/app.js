@@ -9,7 +9,10 @@ app.use(morgan('dev'));
 app.use(helmet());
 app.use(compression());
 // Init db
+require('./db/init.mongodb');
 
+const { checkOverloadConnect } = require('./helpers/check.connect');
+checkOverloadConnect();
 // Init routes
 app.get('/', (req, res, next) => {
   return res.status(200).json({
