@@ -2,8 +2,7 @@
 
 const mongoose = require('mongoose');
 const { countConnect } = require('../helpers/check.connect');
-const connectString =
-  'mongodb+srv://hhq851999:hongquan1999@cluster0.luy1pcu.mongodb.net/?retryWrites=true&w=majority';
+const connectString = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.luy1pcu.mongodb.net/?retryWrites=true&w=majority`;
 
 class Database {
   constructor() {
@@ -19,7 +18,7 @@ class Database {
     mongoose
       .connect(connectString)
       .then((_) => {
-        console.log(`Connected MongoDB Success PRO`, countConnect());
+        console.log(`Connected MongoDB Success PRO`);
       })
       .catch((err) => console.log(err));
   }
