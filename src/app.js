@@ -17,11 +17,7 @@ require('./db/init.mongodb');
 // const { checkOverloadConnect } = require('./helpers/check.connect');
 // checkOverloadConnect();
 // Init routes
-app.get('/', (req, res, next) => {
-  return res.status(200).json({
-    message: 'Welcome Meichan',
-  });
-});
+app.use('/', require('./routes/index'));
 // Handle Error
 
 module.exports = app;
