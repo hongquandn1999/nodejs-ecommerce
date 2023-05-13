@@ -4,3 +4,7 @@ const Roles = {
   EDITOR: '0002', // Editor
   ADMIN: '0003', // admin
 };
+
+module.exports = {
+  Roles,
+};
